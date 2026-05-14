@@ -32,4 +32,17 @@ pipeline{
       }
     }
   }
+  post{
+    success{
+      emailext(
+        subject:"Build Success ${JOB_NAME} #${BUILD_NUMBER}",
+        body:"Build SUccess ${BUILD_URL)",
+        to:"bhumishanbhag@gmail.com"
+        )
+    }
+    failure{
+      subject:"Failed ${JOB_NAME} #${BUILD_NUMBER}",
+      body:"Failed ${BUILD_URL})",
+       to:"bhumishanbhag@gmail.com"
+    }
 }
