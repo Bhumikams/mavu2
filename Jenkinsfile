@@ -41,8 +41,10 @@ pipeline{
         )
     }
     failure{
+      emailext(
       subject:"Failed ${JOB_NAME} #${BUILD_NUMBER}",
       body:"Failed ${BUILD_URL}",
-       to:"bhumishanbhag@gmail.com"
+      to:"bhumishanbhag@gmail.com"
+      )
     }
 }
