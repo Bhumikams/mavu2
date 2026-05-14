@@ -23,7 +23,7 @@ pipeline{
     }
     stage('package'){
       steps{
-        sh 'mvm package'
+        sh 'mvn package'
       }
     }
     stage('run'){
